@@ -6,8 +6,6 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adam Gillion</title>
-	<meta property="og:title" content="Adam Gillion">
-    <meta property="og:description" content="Adam Gillion is a software developer, LAMP developer, photographer and is the creator of GISC. Read more on this site.">
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -201,10 +199,10 @@
                 opacity: 0;
             }
         }
-		.php, .python, .html5, .csh {
+		.php, .python, .html5, .csh, .c {
 			transition-duration: 0.75s;
 		}
-		.php:hover{
+		.php:hover {
 			background-color: #777bb3;
 			transition-duration: 0.75s;
 			padding: 5px;
@@ -224,6 +222,12 @@
 		}
 		.csh:hover{
 			background-color: #390091;
+			transition-duration: 0.75s;
+			padding: 5px;
+			border-radius: 15px;
+		}
+		.c:hover {
+			background-color: #00599c;
 			transition-duration: 0.75s;
 			padding: 5px;
 			border-radius: 15px;
@@ -252,12 +256,60 @@
 
 		.svgicon {
 			color: inherit;
+			height: 24px;
+			width: 24px;
 		}
 
 		#me li:hover {
 			color: #007bff;
 		}
 		
+		#certification {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 30px;
+		}
+
+		#certification .image-row {
+			display: grid;
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: 30px;
+			width: 100%;
+			max-width: 1000px;
+			justify-items: center;
+		}
+
+		#certification .image {
+			width: 100%;
+			max-width: 450px;
+			aspect-ratio: 4 / 3;
+			object-fit: cover;
+			border-radius: 15px;
+			display: block;
+			transform: scale(1);
+			transition: transform 0.3s ease-in-out;
+		}
+
+		#certification .image:hover {
+			transform: scale(1.08);
+			z-index: 2;
+		}
+		
+		#certification .image-row:has(.image:only-child) {
+			display: flex;
+			justify-content: center;
+		}
+
+		@media (max-width: 700px) {
+			#certification .image-row {
+				grid-template-columns: 1fr;
+			}
+
+			#certification .image {
+				max-width: 500px;
+			}
+		}
 </style>
 </head>
 
@@ -304,11 +356,14 @@
             <img class="python" src="images/python.png">
             <img class="html5" src="images/html5.png">
 			<img class="csh" src="images/csharp.png">
+			<img class="c" src="images/c.png">
         </div>
     </section>
     <section id="about">
         <h2>About Me</h2>
-        <p>I am a self-taught full stack web developer specialiing in the Linux Apache MySQL PHP (LAMP) approach. I also program software in python and have strong interests in networking. I have received certificates for completing various CISCO netacad courses in networking, cybersecurity and IT which are findable on my LinkedIn. I also practice freelance photography as a past-time and create programming projects for fun.</p>
+        <p>
+            I am a self-taught full stack web developer specialiing in the Linux Apache MySQL PHP (LAMP) approach. I also program software in python and have strong interests in networking. I have received certificates for completing various CISCO netacad courses in networking, cybersecurity and IT which are findable on my LinkedIn. I also practice freelance photography as a past-time and create programming projects for fun.
+        </p>
     </section>
 
     <section id="projects">
@@ -324,6 +379,21 @@
             <p>Librebook is a free online social media service that anyone can use without having to enter personal information as it goes against the core values of Librebook to collect and use unnecessary information such as addresses or phone numbers. <br> <a href="https://librebook.co.uk/">Check out here</a></p>
         </div>
     </section>
+	
+	<section id="certification">
+		<h1 style='align-self: flex-start;' >Certifications</h1>
+		<div class="image-row">
+			<img class="image" src="certifications/csharpcertif.jpg">
+			<img class="image" src="certifications/networkbasics.jpg">
+		</div>
+		<div class="image-row">
+			<img class="image" src="certifications/ITsupport.jpg">
+			<img class="image" src="certifications/cybersec.jpg">
+		</div>
+		<div class="image-row">
+			<img class="image" src="certifications/hardwarebasics.jpg">
+		</div>
+	</section>
 	
     <section id="me">
         <h2>Where to find me:</h2>
